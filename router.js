@@ -42,9 +42,9 @@ module.exports = () => ({
           currentRoute = routes[j];
           currentUrl = new Url(url.parse(currentRoute.url));
           match = true
+          if (currentRoute.method !== requestedMethod) { match = false; continue; }
           for (let i=currentUrl.pathArray.length - 1; i>=0; i--) {
-            if ((currentUrl.pathArray[i] !== requestedUrl.pathArray[i]) ||
-              (currentRoute.method !== requestedMethod)) { match = false; }
+            if (currentUrl.pathArray[i] !== requestedUrl.pathArray[i]) { match = false; }
           }
           if (match) {
             return currentRoute.handler;

@@ -1,0 +1,24 @@
+{
+  "name": "uncomplicated-router",
+  "version": "0.0.1",
+  "description": "Just another one uncomplicated router for node http module",
+  "main": "router.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pokatomnik/uncomplicated-router.git"
+  },
+  "keywords": [
+    "http",
+    "router"
+  ],
+  "author": "Danilian Achmedzianov <hugefast@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pokatomnik/uncomplicated-router/issues"
+  },
+  "homepage": "https://github.com/pokatomnik/uncomplicated-router#readme"
+}
