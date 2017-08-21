@@ -1,7 +1,6 @@
-#!/usr/bin/env node
+### Here is example that explains everything:
 
-'use strict';
-
+```
 const http = require('http');
 const Router = require('./router');
 
@@ -18,3 +17,4 @@ http
     socket.end('HTTP/1.1 400 Bad Request\r\n\r\n');
   })
   .listen(8000);
+```
