@@ -7,7 +7,8 @@ const Router = require('./router');
 const router = Router()
   .get('/', (req, res) => { res.end('main'); })
   .get('/home', (req, res) => { res.end('home'); })
-  .get('/test/:id', (req, res) => { res.end(`Params is ${req.params.id}`) })
+  .get('/test/:id', (req, res) => { res.end(`Params is ${req.params.id}`); })
+  .post('new-resource', (req, res) => { res.end('New resource created'); })
   .default((req, res) => { res.writeHead(404); res.end('404! Oops!'); })
   .getRouter();
 
