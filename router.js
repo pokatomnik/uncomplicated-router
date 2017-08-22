@@ -24,12 +24,9 @@ const routerObject = {
           this.pathArray = pathArray;
           return this;
         }
-        param(param) {
-          return this[param];
-        }
       }
       const findRoute = (routes, requestedUrl, requestedMethod) => {
-        let currentUrl, pathPart, match, currentRoute;
+        let currentUrl, match, currentRoute;
 
         for (let j=this.routes.length-1; j>=0; j--) {
           currentRoute = routes[ j ];
@@ -38,7 +35,7 @@ const routerObject = {
           /* path array length mismatch */
           if (currentUrl.pathArray.length !== requestedUrl.pathArray.length) { continue; }
 
-          match = true
+          match = true;
           /* methods mismatch */
           if (currentRoute.method !== requestedMethod) { match = false; continue; }
           for (let i=currentUrl.pathArray.length - 1; i>=0; i--) {
