@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.org/pokatomnik/uncomplicated-router.svg?branch=master)](https://travis-ci.org/pokatomnik/uncomplicated-router) [![Coverage Status](https://coveralls.io/repos/github/pokatomnik/uncomplicated-router/badge.svg?branch=master)](https://coveralls.io/github/pokatomnik/uncomplicated-router?branch=master)
 
-### Here is example that explains everything:
+### Here is example:
 
-```
+```javascript
 const http = require('http');
 const Router = require('./router');
 
@@ -22,6 +22,14 @@ http
   .listen(8000);
 ```
 
+*Explanation:*
+* Main `Router()` method initializes new router object
+* `.get` - set hanlder for GET method and route
+* `.post` - same but for POST method,
+* This router supports following methods: 'get', 'head', 'post', 'put', 'delete', 'connect', 'options', 'trace' and 'patch'
+* No middleware support (for now)
+* Use `.default()` to handle 'Not Found' routes
+* `.getRouter()` function returns your main router for your `http.createServer` method
+
 ## Plans:
 * Middleware support
-* Unit tests

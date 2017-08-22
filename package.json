@@ -1,6 +1,6 @@
 {
   "name": "uncomplicated-router",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Just another one uncomplicated router for node http module",
   "main": "router.js",
   "scripts": {
