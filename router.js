@@ -41,7 +41,7 @@ const routerObject = {
           for (let i=currentUrl.pathArray.length - 1; i>=0; i--) {
 
             /* custom parameter */
-            if (currentUrl.pathArray[i].startsWith(':')) {
+            if (currentUrl.pathArray[ i ].startsWith(':')) {
 
               /* custom parameter is empty, skipping */
               if (!requestedUrl.pathArray[ i ]) { match = false; continue; }
