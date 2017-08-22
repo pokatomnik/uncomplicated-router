@@ -182,4 +182,90 @@ describe('Testing router', () => {
       res.should.eql({});
     });
   });
+
+  describe('Url params length mismatch', () => {
+    it('/foo/bar vs /foo', () => {
+      const router = Router()
+        .get('/foo/bar', () => {})
+        .getRouter();
+
+      const req = { url: '/foo', method: 'GET' };
+      const res = {
+        writeHead(value) {
+          this.notFound = value;
+        },
+        end() {}
+      };
+
+      router(req, res);
+
+      res.notFound.should.eql(404);
+    });
+
+    it('/foo vs /foo/bar', () => {
+      const router = Router()
+        .get('/foo', () => {})
+        .getRouter();
+
+      const req = { url: '/foo/bar', method: 'GET' };
+      const res = {
+        writeHead(value) {
+          this.notFound = value;
+        },
+        end() {}
+      };
+
+      router(req, res);
+
+      res.notFound.should.eql(404);
+    });
+  });
+
+  describe('Methods mismatch', () => {
+    it('GET vs POST', () => {
+      const router = Router()
+        .get('/test', () => {})
+        .getRouter();
+
+      const req = {
+        method: 'POST',
+        url: '/test'
+      };
+
+      const res = {
+        writeHead(value) {
+          this.notFound = value;
+        },
+        end() {}
+      };
+
+      router(req, res);
+
+      res.notFound.should.be.a.Number().and.eql(404);
+    });
+  });
+
+  describe('Empty parameter', () => {
+    it('Test GET /test/:bar', () => {
+      const router = Router()
+        .get('/test/:bar', () => {})
+        .getRouter();
+
+      const req = { url: '/value1/', method: 'GET' };
+      const res = {
+        writeHead(value) {
+          this.value = value;
+        },
+        end() {}
+      };
+
+      router(req, res);
+
+      req.should.eql({
+        url: '/value1/', method: 'GET', params: {}
+      });
+      res.value.should.eql(404);
+    });
+  });
+
 });

@@ -44,9 +44,6 @@ module.exports = () => (() => {
               /* custom parameter */
               if (currentUrl.pathArray[ i ].startsWith(':')) {
 
-                /* custom parameter is empty, skipping */
-                if (!requestedUrl.pathArray[ i ]) { match = false; continue; }
-
                 /* custom parameter must be set, current iteration must be stopped */
                 req.params[ currentUrl.pathArray[ i ].slice(1) ] = requestedUrl.pathArray[ i ];
                 continue;
