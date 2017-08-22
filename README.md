@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/pokatomnik/uncomplicated-router.svg?branch=master)](https://travis-ci.org/pokatomnik/uncomplicated-router) [![Coverage Status](https://coveralls.io/repos/github/pokatomnik/uncomplicated-router/badge.svg?branch=master)](https://coveralls.io/github/pokatomnik/uncomplicated-router?branch=master)
+
 ### Here is example that explains everything:
 
 ```

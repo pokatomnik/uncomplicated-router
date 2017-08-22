@@ -4,8 +4,9 @@
   "description": "Just another one uncomplicated router for node http module",
   "main": "router.js",
   "scripts": {
-    "test": "nyc --reporter=html mocha",
-    "start": "node server.js"
+    "test": "nyc --reporter=html --reporter=lcov mocha",
+    "start": "node server.js",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/pokatomnik/uncomplicated-router#readme",
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "mocha": "^3.5.0",
     "nyc": "^11.1.0",
     "should": "^11.2.1"
